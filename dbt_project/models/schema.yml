@@ -1,0 +1,21 @@
+version: 2
+
+sources:
+  - name: raw
+    description: "Raw data from Telegram channels"
+    tables:
+      - name: lobelia4cosmetics
+        description: "Raw messages from the lobelia4cosmetics channel"
+      - name: tikvahpharma
+        description: "Raw messages from the tikvahpharma channel"
+
+models:
+  - name: stg_telegram_messages
+    description: "Cleansed telegram messages from the raw data"
+    tests:
+      - not_null:
+          column_name: message_id
+      - unique:
+          column_name: message_id
+      - not_null:
+          column_name: message_text

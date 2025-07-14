@@ -1,0 +1,24 @@
+name: 'kaim_week7'
+version: '1.0'
+config-version: 2
+
+profile: "kaim_week7"
+
+# Specify the correct paths
+source-paths: ["models"]
+target-path: "target"
+clean-targets: ["target", "dbt_packages"]
+
+# Add model configurations
+models:
+  kaim_week7:
+    staging:
+      stg_telegram_messages:
+        +materialized: table  # This line adds a materialization strategy
+        +tests:
+          - not_null:
+              column_name: message_id
+          - unique:
+              column_name: message_id
+          - not_null:
+              column_name: message_text

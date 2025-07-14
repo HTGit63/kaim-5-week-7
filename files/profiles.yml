@@ -1,0 +1,12 @@
+kaim_week7:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: docker_postgres_1
+      user: postgres
+      password: hmdat@8712
+      dbname: kaim_week7
+      schema: public
+      threads: 1
+      port: 5433

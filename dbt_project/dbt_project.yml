@@ -1,9 +1,0 @@
-name: 'kaim_week7'
-version: '1.0'
-config-version: 2
-
-profile: "${DBT_PROFILE}"
-
-source-paths: ["models"]
-target-path: "target"
-clean-targets: ["target", "dbt_packages"]
